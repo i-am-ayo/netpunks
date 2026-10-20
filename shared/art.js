@@ -1,8 +1,9 @@
 // Original deterministic 24 x 24 pixel artwork. No CryptoPunks assets are used.
+// Neon cyberpunk palette: dark backdrops with electric skin, hair and accent colors.
 export const MAX_SUPPLY = 10_000;
-const skins = ['#bf8668', '#e1b28a', '#8c5e4a', '#edc7a0', '#c99575', '#b5c6a6', '#8bbdc5'];
-const hairColors = ['#36302f', '#795747', '#e6b44f', '#c37a73', '#c8d6bf', '#4a6257'];
-const backgrounds = ['#c6d9cf', '#d4cde4', '#d7bdad', '#bfd3e2', '#e3cfac', '#c8cfb5', '#c8cbd5', '#dfc5ce'];
+const skins = ['#8be9fd', '#ff79c6', '#bd93f9', '#50fa7b', '#f1fa8c', '#ffb86c', '#9db4ff'];
+const hairColors = ['#00e5ff', '#ff2d95', '#39ff14', '#ffea00', '#b026ff', '#f5f5ff'];
+const backgrounds = ['#0d0b1e', '#1a1030', '#120a24', '#0b1a24', '#241033', '#0f1626', '#1c0f2e', '#101b2b'];
 export const TYPES = ['Human', 'Zombie', 'Alien'];
 export const HAIR = ['Crop', 'Mohawk', 'Bob', 'Cap', 'Beanie', 'Wild', 'Bald', 'Side part'];
 export const EYES = ['Classic', 'Shades', 'Round glasses', '3D glasses', 'Eye patch'];
@@ -21,9 +22,9 @@ export function traitsFor(id) {
 export function imageSvg(id) {
   const n = Number(id), t = traitsFor(n);
   const bg = backgrounds[(t.background + n * 3) % backgrounds.length];
-  const skin = t.type === 'Alien' ? '#8bbdc5' : t.type === 'Zombie' ? '#a6b58b' : skins[t.skin];
+  const skin = t.type === 'Alien' ? '#7cffcb' : t.type === 'Zombie' ? '#9be36b' : skins[t.skin];
   const hair = hairColors[t.hairColor];
-  const dark = '#302c30', shade = '#9a6550', shirt = ['#3e5158', '#a3aaa1', '#93676d', '#505e91', '#dbd5bb'][n % 5];
+  const dark = '#0a0912', shade = '#2a1c3f', shirt = ['#1b1f3b', '#2a1a3b', '#0f2a2e', '#3b1a2a', '#1a1a24'][n % 5];
   const shapes = [];
   const rect = (x,y,w,h,c) => shapes.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`);
   rect(0,0,24,24,bg);
@@ -33,21 +34,21 @@ export function imageSvg(id) {
   rect(9,17,7,2,skin); rect(10,19,5,1,dark); rect(9,16,1,2,shade);
   rect(13,12,1,3,shade); rect(13,14,2,1,dark); rect(11,17,3,1,dark);
   rect(10,10,2,1,dark); rect(15,10,1,1,dark);
-  rect(10,11,1,1,'#f6edd9'); rect(15,11,1,1,'#f6edd9');
-  if (t.eyes === 'Shades') { rect(8,10,9,1,dark); rect(9,11,4,2,dark); rect(14,11,3,2,dark); rect(10,11,2,1,'#5a676c'); }
-  if (t.eyes === 'Round glasses') { rect(9,10,4,3,dark); rect(14,10,4,3,dark); rect(13,11,1,1,dark); rect(10,11,2,1,'#b6c3b9'); rect(15,11,2,1,'#b6c3b9'); }
-  if (t.eyes === '3D glasses') { rect(8,10,10,3,'#f4ecda'); rect(9,11,3,1,'#d5757b'); rect(14,11,3,1,'#5b98a9'); }
+  rect(10,11,1,1,'#eaffff'); rect(15,11,1,1,'#eaffff');
+  if (t.eyes === 'Shades') { rect(8,10,9,1,dark); rect(9,11,4,2,dark); rect(14,11,3,2,dark); rect(10,11,2,1,'#00e5ff'); }
+  if (t.eyes === 'Round glasses') { rect(9,10,4,3,dark); rect(14,10,4,3,dark); rect(13,11,1,1,dark); rect(10,11,2,1,'#7cf9ff'); rect(15,11,2,1,'#7cf9ff'); }
+  if (t.eyes === '3D glasses') { rect(8,10,10,3,'#e8e6ff'); rect(9,11,3,1,'#ff2d95'); rect(14,11,3,1,'#00e5ff'); }
   if (t.eyes === 'Eye patch') { rect(8,9,8,1,dark); rect(9,10,4,3,dark); }
   if (t.hair === 'Crop') { rect(8,5,9,3,hair); rect(7,7,2,3,hair); rect(16,7,2,2,hair); }
   if (t.hair === 'Mohawk') { rect(11,2,3,5,hair); rect(12,1,1,2,hair); rect(10,5,5,2,hair); }
   if (t.hair === 'Bob') { rect(7,4,11,4,hair); rect(6,7,3,10,hair); rect(17,7,2,11,hair); rect(9,7,3,1,hair); }
-  if (t.hair === 'Cap') { rect(8,4,9,3,shirt); rect(7,6,13,2,shirt); rect(14,4,1,2,'#f0e6c9'); }
+  if (t.hair === 'Cap') { rect(8,4,9,3,shirt); rect(7,6,13,2,shirt); rect(14,4,1,2,'#eaffff'); }
   if (t.hair === 'Beanie') { rect(9,3,7,1,hair); rect(7,4,11,3,hair); rect(7,7,11,2,shirt); }
   if (t.hair === 'Wild') { rect(6,4,13,3,hair); rect(7,3,3,2,hair); rect(12,2,3,3,hair); rect(17,3,2,4,hair); rect(6,7,3,3,hair); rect(17,7,2,3,hair); }
   if (t.hair === 'Side part') { rect(8,4,9,3,hair); rect(7,6,3,4,hair); rect(10,7,4,1,hair); rect(16,6,2,3,hair); }
-  if (t.earring) { rect(7,14,1,3,'#e8bc57'); rect(8,16,1,1,'#e8bc57'); }
+  if (t.earring) { rect(7,14,1,3,'#00e5ff'); rect(8,16,1,1,'#00e5ff'); }
   // A woven, 14-bit shirt signature also guarantees visually unique artwork.
-  for (let bit=0;bit<14;bit++) if ((n >> bit) & 1) rect(7 + bit % 7, 22 + Math.floor(bit/7), 1, 1, '#d6d8cb');
+  for (let bit=0;bit<14;bit++) if ((n >> bit) & 1) rect(7 + bit % 7, 22 + Math.floor(bit/7), 1, 1, '#00e5ff');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="480" height="480" shape-rendering="crispEdges"><title>NETPUNK #${n}</title>${shapes.join('')}</svg>`;
 }
 
