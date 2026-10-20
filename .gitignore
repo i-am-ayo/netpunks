@@ -1,0 +1,14 @@
+node_modules/
+dist/
+artifacts/
+cache/
+.runtime/
+.env
+.env.*
+!.env.example
+!.env.*.example
+coverage/
+exported-assets/
+docs/uml/
+.DS_Store
+.runtime-tests.log

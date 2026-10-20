@@ -1,0 +1,53 @@
+{
+  "name": "netpunks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:api": "node --env-file-if-exists=.env server/index.js",
+    "chain": "hardhat node --hostname 127.0.0.1",
+    "compile": "hardhat compile",
+    "deploy:local": "node --env-file-if-exists=.env scripts/deploy.mjs",
+    "sepolia:setup": "node scripts/setup-sepolia.mjs",
+    "sepolia:check": "npm run compile && node --env-file-if-exists=.env.sepolia scripts/deploy-sepolia.mjs --dry-run",
+    "deploy:sepolia": "npm run compile && node --env-file-if-exists=.env.sepolia scripts/deploy-sepolia.mjs --deploy",
+    "dev:sepolia": "node --env-file-if-exists=.env.sepolia scripts/dev-sepolia.mjs",
+    "start:sepolia": "node --env-file-if-exists=.env.sepolia scripts/start.mjs --sepolia",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env scripts/start.mjs",
+    "test": "npm run compile && node --test test/*.test.js",
+    "export:assets": "node --env-file-if-exists=.env.sepolia scripts/export-assets.mjs",
+    "doctor": "node scripts/classroom-doctor.mjs",
+    "exercise:check": "node scripts/check-exercises.mjs",
+    "predev": "npm run exercise:check",
+    "predeploy:local": "npm run exercise:check",
+    "predeploy:sepolia": "npm run exercise:check",
+    "predev:sepolia": "npm run exercise:check",
+    "test:nft": "npm run compile && node --test --test-name-pattern=\"ERC-721 mint|mint rejects|only the owner\" test/contracts.test.js",
+    "test:contracts": "npm run compile && node --test test/contracts.test.js test/classroom.test.js"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "@fontsource/space-grotesk": "^5.2.0",
+    "@phosphor-icons/vue": "^2.2.1",
+    "ethers": "^6.15.0",
+    "express": "^5.3.0",
+    "vue": "^3.5.44"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.2.1",
+    "@openzeppelin/contracts": "5.6.1",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "hardhat": "^3.20.0",
+    "solc": "0.8.37",
+    "vite": "^8.3.4"
+  }
+}

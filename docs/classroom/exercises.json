@@ -1,0 +1,19 @@
+[
+  {"id":"N01","title":"Mint preconditions","file":"contracts/NetPunks.sol","points":8,"dependsOn":[]},
+  {"id":"N02","title":"Sequential minting and accounting","file":"contracts/NetPunks.sol","points":10,"dependsOn":["N01","N07"]},
+  {"id":"N03","title":"Mint availability and price","file":"contracts/NetPunks.sol","points":4,"dependsOn":[]},
+  {"id":"N04","title":"Withdraw primary mint proceeds","file":"contracts/NetPunks.sol","points":6,"dependsOn":["N02"]},
+  {"id":"N05","title":"Token approval versions","file":"contracts/NetPunks.sol","points":4,"dependsOn":[]},
+  {"id":"N06","title":"Operator approval versions","file":"contracts/NetPunks.sol","points":4,"dependsOn":[]},
+  {"id":"N07","title":"Ownership versions","file":"contracts/NetPunks.sol","points":4,"dependsOn":[]},
+  {"id":"M01","title":"Market transfer approval","file":"contracts/NetPunksMarket.sol","points":4,"dependsOn":["N05","N06"]},
+  {"id":"M02","title":"Validate a stored listing","file":"contracts/NetPunksMarket.sol","points":8,"dependsOn":["N05","N06","N07","M01"]},
+  {"id":"M03","title":"Create or reprice a listing","file":"contracts/NetPunksMarket.sol","points":7,"dependsOn":["M01"]},
+  {"id":"M04","title":"Cancel a listing","file":"contracts/NetPunksMarket.sol","points":3,"dependsOn":["M03"]},
+  {"id":"M05","title":"Buy at a fixed price","file":"contracts/NetPunksMarket.sol","points":10,"dependsOn":["M02","M03","M09"]},
+  {"id":"M06","title":"Place or raise the highest bid","file":"contracts/NetPunksMarket.sol","points":7,"dependsOn":["M09"]},
+  {"id":"M07","title":"Withdraw the current bid","file":"contracts/NetPunksMarket.sol","points":4,"dependsOn":["M06","M09"]},
+  {"id":"M08","title":"Accept a bid and settle","file":"contracts/NetPunksMarket.sol","points":8,"dependsOn":["M01","M03","M06"]},
+  {"id":"M09","title":"Credit an old bid for refund","file":"contracts/NetPunksMarket.sol","points":4,"dependsOn":[]},
+  {"id":"M10","title":"Withdraw pending market funds","file":"contracts/NetPunksMarket.sol","points":5,"dependsOn":["M09"]}
+]

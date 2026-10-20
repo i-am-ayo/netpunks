@@ -1,0 +1,20 @@
+// Chinese source copy is its own fallback. These entries localize canonical traits and brand copy.
+export default {
+  'ORIGINAL PIXELS. YOUR IDENTITY.': '原创像素，定义你的身份。',
+  'Small pixels.': '小小像素。',
+  'Big personalities.': '大有个性。',
+  '24 × 24 pixels.': '24 × 24 像素。',
+  'Endless character.': '个性，无限可能。',
+  'ORIGINAL 24 × 24': '原创 24 × 24 像素',
+  'COLLECTION COMPLETE': '系列已铸造完成',
+  'NEXT IN LINE': '下一枚',
+  OPEN: '开放', SOLD: '售罄', PAUSED: '暂停',
+  '持有者数量':'持有者',
+  Human: '人类', Zombie: '僵尸', Alien: '外星人',
+  Crop: '短发', Mohawk: '莫霍克', Bob: '波波头', Cap: '鸭舌帽', Beanie: '针织帽', Wild: '蓬松发', Bald: '光头', 'Side part': '侧分',
+  Classic: '原生', Shades: '墨镜', 'Round glasses': '圆框眼镜', '3D glasses': '3D 眼镜', 'Eye patch': '眼罩',
+  'No deployment found. Run npm run dev, or start the chain and run npm run deploy:local.': '未找到本地部署，请运行 npm run dev 启动项目。',
+  'Local chain has changed. Restart npm run dev to deploy and reseed.': '本地链已变化，请重新运行 npm run dev。',
+  'Failed to fetch': '网络连接失败，请检查本地服务是否正在运行。',
+  'The operation timed out.': '请求超时，请稍后重试。',
+};
