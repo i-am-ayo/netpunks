@@ -9,8 +9,8 @@
   "market": "0xE579c372224e69D771296727A5f7b3Be37Cc9726",
   "metadataBaseUrl": "https://netpunks.onrender.com/api/metadata/",
   "deployer": "0x263180C84C3C5C9ABA940ddB85B98b3C44c6651C",
-  "blockNumber": 12004201,
-  "blockHash": "0x49d39cd04b001f729bd5855518283f58b7ba33e3f12492cf2a0265f555904b1f",
+  "blockNumber": 12054053,
+  "blockHash": "0xbd35be9408a8ab13b2fd97c6052fc9cb24c639fc19b7033f378410101a47f4b1",
   "collectionAbi": [
     {
       "inputs": [
